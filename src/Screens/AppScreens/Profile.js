@@ -116,7 +116,7 @@ const Profile = () => {
         {/* Bottom Button */}
         <View style={{alignItems: 'center', justifyContent: 'center'}}>
           <Button style={{backgroundColor: '#FB724A'}} block>
-            <Text style={{fontSize: 18, color: '#FFF'}}>Sign Out</Text>
+            <Text style={{fontSize: 18, color: '#FFF'}}>Sign out</Text>
           </Button>
           <TouchableOpacity>
             <Text style={{fontSize: 18, marginVertical: 10, color: '#FB724A'}}>
@@ -130,19 +130,19 @@ const Profile = () => {
         <FooterTab style={{backgroundColor: '#E5E5E5'}}>
           <Button vertical>
             <Icon name="briefcase" style={{color: '#FB724A'}} />
-            <Text style={{color: '#2C3E50', fontSize: 14}}>Order</Text>
+            <Text style={{color: '#FB724A', fontSize: 14}}>Order</Text>
           </Button>
           <Button vertical>
             <Icon name="albums" style={{color: '#FB724A'}} />
-            <Text style={{color: '#2C3E50', fontSize: 14}}>Package</Text>
+            <Text style={{color: '#FB724A', fontSize: 14}}>Package</Text>
           </Button>
           <Button vertical>
             <Icon name="chatboxes" style={{color: '#FB724A'}} />
-            <Text style={{color: '#2C3E50', fontSize: 14}}>Chat</Text>
+            <Text style={{color: '#FB724A', fontSize: 14}}>Chat</Text>
           </Button>
           <Button vertical>
             <Icon name="person" style={{color: '#FB724A'}} />
-            <Text style={{color: '#2C3E50', fontSize: 14}}>Profile</Text>
+            <Text style={{color: '#FB724A', fontSize: 14}}>Profile</Text>
           </Button>
         </FooterTab>
       </Footer>
