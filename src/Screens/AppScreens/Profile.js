@@ -5,11 +5,10 @@ import {
   StyleSheet,
   TouchableOpacity,
   Image,
-  Modal,
-  TouchableHighlight,
   Alert,
 } from 'react-native';
-import {Thumbnail, Icon, Button, Footer, FooterTab} from 'native-base';
+import {Thumbnail, Icon, Button} from 'native-base';
+import FooterNav from '../../Components/FooterNav';
 
 const Profile = () => {
   const [modal, setModal] = useState(false);
@@ -165,7 +164,7 @@ const Profile = () => {
               Guide
             </Text>
           </View>
-          <Text style={{marginTop: 15}}>V1.0.0.0</Text>
+          <Text style={{marginTop: 15}}>V 0.0.0.1</Text>
         </View>
         {/* Bottom Button */}
         <View style={{alignItems: 'center', justifyContent: 'center'}}>
@@ -180,27 +179,7 @@ const Profile = () => {
         </View>
       </View>
       {/* Footer... */}
-      <Footer>
-        <FooterTab style={{backgroundColor: '#E5E5E5'}}>
-          <Button vertical>
-            <Icon name="briefcase" style={{color: '#FB724A'}} />
-            <Text style={{color: '#FB724A', fontSize: 14}}>Order</Text>
-          </Button>
-          <Button vertical>
-            <Icon name="albums" style={{color: '#FB724A'}} />
-            <Text style={{color: '#FB724A', fontSize: 14}}>Package</Text>
-          </Button>
-          <Button vertical>
-            <Icon name="chatboxes" style={{color: '#FB724A'}} />
-            <Text style={{color: '#FB724A', fontSize: 14}}>Chat</Text>
-          </Button>
-          <Button vertical>
-            <Icon name="person" style={{color: '#FB724A'}} />
-            <Text style={{color: '#FB724A', fontSize: 14}}>Profile</Text>
-          </Button>
-        </FooterTab>
-      </Footer>
-      {/* Modal... */}
+      <FooterNav />
     </Fragment>
   );
 };
