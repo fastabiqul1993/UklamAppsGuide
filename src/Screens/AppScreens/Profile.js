@@ -1,8 +1,35 @@
-import React, {Fragment} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import React, {Fragment, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  Image,
+  Modal,
+  TouchableHighlight,
+  Alert,
+} from 'react-native';
 import {Thumbnail, Icon, Button, Footer, FooterTab} from 'native-base';
 
 const Profile = () => {
+  const [modal, setModal] = useState(false);
+
+  const showAlertRedeem = () => {
+    Alert.alert(
+      'Redeem',
+      'Are you sure to redeem your cash?',
+      [
+        {
+          text: 'Cancel',
+          onPress: () => console.log('Cancel Pressed'),
+          style: 'cancel',
+        },
+        {text: 'OK', onPress: () => console.log('OK Pressed')},
+      ],
+      {cancelable: false},
+    );
+  };
+
   return (
     <Fragment>
       <View style={{flex: 1, paddingHorizontal: 20, paddingTop: 34}}>
@@ -80,7 +107,7 @@ const Profile = () => {
               />
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => showAlertRedeem()}>
             <View
               style={{
                 height: 52,
@@ -146,6 +173,7 @@ const Profile = () => {
           </Button>
         </FooterTab>
       </Footer>
+      {/* Modal... */}
     </Fragment>
   );
 };

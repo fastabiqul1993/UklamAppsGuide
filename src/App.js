@@ -7,12 +7,13 @@
  */
 
 import React, {Fragment} from 'react';
-import EditProfile from './Screens/AppScreens/EditProfile';
+// import EditProfile from './Screens/AppScreens/EditProfile';
+import Profile from './Screens/AppScreens/Profile';
 
 const App = () => {
   return (
     <Fragment>
-      <EditProfile />
+      <Profile />
     </Fragment>
   );
 };
