@@ -52,32 +52,46 @@ const Profile = () => {
               <View
                 style={{
                   flexDirection: 'row',
-                  marginVertical: 3,
                 }}>
                 <Icon
                   type="Ionicons"
                   name="pin"
-                  style={{fontSize: 18, color: '#FB724A', textAlign: 'center'}}
+                  style={{
+                    fontSize: 18,
+                    color: '#FB724A',
+                    alignSelf: 'center',
+                    marginLeft: 3,
+                    width: 30,
+                    height: 30,
+                  }}
                 />
                 <Text
                   style={{
                     fontSize: 14,
-                    marginHorizontal: 10,
+                    marginLeft: -3,
                     color: '#91929E',
                   }}>
                   Tokyo, Japan
                 </Text>
               </View>
-              <View style={{flexDirection: 'row'}}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                }}>
                 <Icon
                   type="Ionicons"
                   name="mail"
-                  style={{fontSize: 18, color: '#FB724A'}}
+                  style={{
+                    fontSize: 18,
+                    color: '#FB724A',
+                    alignSelf: 'center',
+                    width: 30,
+                    height: 30,
+                  }}
                 />
                 <Text
                   style={{
                     fontSize: 14,
-                    marginHorizontal: 10,
                     color: '#91929E',
                   }}>
                   miyabi@mail.jav
@@ -134,10 +148,23 @@ const Profile = () => {
             justifyContent: 'center',
             marginVertical: 45,
           }}>
-          <Image
-            style={{width: 200, height: 100}}
-            source={require('../../Assets/icon2-01.png')}
-          />
+          <View style={{flexDirection: 'row'}}>
+            <Image
+              style={{width: 125, height: 75}}
+              source={require('../../Assets/icon2-01.png')}
+            />
+            <Text
+              style={{
+                alignSelf: 'center',
+                fontWeight: 'bold',
+                fontSize: 32,
+                paddingTop: 20,
+                color: '#FF7C00',
+                marginLeft: 10,
+              }}>
+              Guide
+            </Text>
+          </View>
           <Text style={{marginTop: 15}}>V1.0.0.0</Text>
         </View>
         {/* Bottom Button */}
