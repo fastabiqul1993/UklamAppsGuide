@@ -17,8 +17,6 @@ import FooterNav from '../../Components/FooterNav';
 // Line Color : '#E5E5E5'
 
 const Profile = () => {
-  const [modal, setModal] = useState(false);
-
   const showAlertRedeem = () => {
     Alert.alert(
       'Redeem',
@@ -155,7 +153,7 @@ const Profile = () => {
           style={{
             alignItems: 'center',
             justifyContent: 'center',
-            marginVertical: 45,
+            marginVertical: 35,
           }}>
           <View style={{flexDirection: 'row'}}>
             <Image

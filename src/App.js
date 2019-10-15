@@ -11,12 +11,14 @@ import React, {Fragment} from 'react';
 // import Profile from './Screens/AppScreens/Profile';
 // import TOS from './Screens/AppScreens/TOS';
 // import PackageList from './Screens/AppScreens/PackageList';
-import AddPackage from './Screens/AppScreens/AddPackage';
+// import AddPackage from './Screens/AppScreens/AddPackage';
+// import EditPackage from './Screens/AppScreens/EditPackage';
+import DetailPackage from './Screens/AppScreens/DetailPackage';
 
 const App = () => {
   return (
     <Fragment>
-      <AddPackage />
+      <DetailPackage />
     </Fragment>
   );
 };
