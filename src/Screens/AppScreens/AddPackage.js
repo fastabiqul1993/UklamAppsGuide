@@ -1,5 +1,12 @@
-import React, {Fragment} from 'react';
-import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
+import React, {Fragment, useState} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  ScrollView,
+  Picker,
+} from 'react-native';
 import {Icon, Button, Thumbnail, Footer} from 'native-base';
 
 //Color pallete
@@ -9,6 +16,8 @@ import {Icon, Button, Thumbnail, Footer} from 'native-base';
 // Line Color : '#E5E5E5'
 
 const AddPackage = () => {
+  const [type, setType] = useState('');
+
   return (
     <Fragment>
       <ScrollView
@@ -53,8 +62,20 @@ const AddPackage = () => {
               borderBottomWidth: 1,
               marginTop: 10,
             }}
-            placeholder="Insert package type..."
+            placeholder="Insert package price..."
           />
+          <View style={{height: 56, marginBottom: 0, paddingBottom: 0}}>
+            <Picker
+              style={{height: 56}}
+              selectedValue={type}
+              itemStyle={{color: '#FAFAFA', fontSize: 18}}
+              onValueChange={(itemValue, itemIndex) => setType(itemValue)}>
+              <Picker.Item label="Insert package type..." value="" />
+              <Picker.Item label="Steve" value="steve" />
+              <Picker.Item label="Ellen" value="ellen" />
+              <Picker.Item label="Maria" value="maria" />
+            </Picker>
+          </View>
           <TextInput
             style={{
               height: 56,
@@ -62,9 +83,11 @@ const AddPackage = () => {
               color: '#3C3C3E',
               borderBottomColor: '#E5E5E5',
               borderBottomWidth: 1,
-              marginTop: 10,
+              // marginTop: 10,
             }}
-            placeholder="Insert package price..."
+            multiline={true}
+            numberOfLines={4}
+            placeholder="Insert package description..."
           />
           <View style={{flexDirection: 'row', marginTop: 10, height: 85}}>
             <Text
