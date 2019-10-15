@@ -10,6 +10,12 @@ import {
 import {Thumbnail, Icon, Button} from 'native-base';
 import FooterNav from '../../Components/FooterNav';
 
+//Color pallete
+// Title Text: '#171719'
+// Second Text: '#3C3C3E'
+// Primary Color : '#FB724A'
+// Line Color : '#E5E5E5'
+
 const Profile = () => {
   const [modal, setModal] = useState(false);
 
@@ -34,7 +40,9 @@ const Profile = () => {
       <View style={{flex: 1, paddingHorizontal: 20, paddingTop: 34}}>
         {/* Hero... */}
         <View style={{height: 37}}>
-          <Text style={{fontSize: 28}}>Profile</Text>
+          <Text style={{fontSize: 28, fontWeight: 'bold', color: '#171719'}}>
+            Profile
+          </Text>
         </View>
         {/* Profile mini... */}
         <View style={{height: 80, marginTop: 25, flexDirection: 'row'}}>
@@ -46,7 +54,7 @@ const Profile = () => {
             }}
           />
           <View style={{flexDirection: 'column', marginHorizontal: 10}}>
-            <Text style={{fontSize: 17}}>Maria Ozawa</Text>
+            <Text style={{fontSize: 17, color: '#3C3C3E'}}>Maria Ozawa</Text>
             <View style={{marginTop: 10}}>
               <View
                 style={{
@@ -112,7 +120,9 @@ const Profile = () => {
                 borderBottomColor: '#E5E5E5',
                 borderBottomWidth: 1,
               }}>
-              <Text style={{fontSize: 18}}>Setting account</Text>
+              <Text style={{fontSize: 18, color: '#3C3C3E'}}>
+                Setting account
+              </Text>
               <Icon
                 style={{fontSize: 18, color: '#FB724A'}}
                 type="Ionicons"
@@ -131,7 +141,7 @@ const Profile = () => {
                 borderBottomColor: '#E5E5E5',
                 borderBottomWidth: 1,
               }}>
-              <Text style={{fontSize: 18}}>Redeem cash</Text>
+              <Text style={{fontSize: 18, color: '#3C3C3E'}}>Redeem cash</Text>
               <Icon
                 style={{fontSize: 18, color: '#FB724A'}}
                 type="Ionicons"
@@ -164,7 +174,7 @@ const Profile = () => {
               Guide
             </Text>
           </View>
-          <Text style={{marginTop: 15}}>V 0.0.0.1</Text>
+          <Text style={{marginTop: 15, color: '#3C3C3E'}}>V 0.0.0.1</Text>
         </View>
         {/* Bottom Button */}
         <View style={{alignItems: 'center', justifyContent: 'center'}}>

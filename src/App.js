@@ -8,12 +8,14 @@
 
 import React, {Fragment} from 'react';
 // import EditProfile from './Screens/AppScreens/EditProfile';
-import Profile from './Screens/AppScreens/Profile';
+// import Profile from './Screens/AppScreens/Profile';
+// import TOS from './Screens/AppScreens/TOS';
+import PackageList from './Screens/AppScreens/PackageList';
 
 const App = () => {
   return (
     <Fragment>
-      <Profile />
+      <PackageList />
     </Fragment>
   );
 };

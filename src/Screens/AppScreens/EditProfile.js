@@ -2,6 +2,12 @@ import React, {Fragment} from 'react';
 import {View, Text, StyleSheet, TextInput, ScrollView} from 'react-native';
 import {Icon, Button, Thumbnail} from 'native-base';
 
+//Color pallete
+// Title Text: '#171719'
+// Second Text: '#3C3C3E'
+// Primary Color : '#FB724A'
+// Line Color : '#E5E5E5'
+
 const EditProfile = () => {
   return (
     <Fragment>
@@ -16,7 +22,15 @@ const EditProfile = () => {
         }}>
         {/* Arrow back... */}
         <Icon type="Ionicons" name="arrow-back" style={{color: '#FB724A'}} />
-        <Text style={{fontSize: 28, marginTop: 18}}>Edit Profile</Text>
+        <Text
+          style={{
+            fontSize: 28,
+            fontWeight: 'bold',
+            color: '#171719',
+            marginTop: 18,
+          }}>
+          Edit Profile
+        </Text>
         {/* Text input... */}
         <View style={{marginTop: 23}}>
           <Thumbnail
@@ -35,6 +49,7 @@ const EditProfile = () => {
             style={{
               height: 56,
               fontSize: 18,
+              color: '#3C3C3E',
               borderBottomColor: '#E5E5E5',
               borderBottomWidth: 1,
               marginTop: 10,
@@ -45,6 +60,7 @@ const EditProfile = () => {
             style={{
               height: 56,
               fontSize: 18,
+              color: '#3C3C3E',
               borderBottomColor: '#E5E5E5',
               borderBottomWidth: 1,
               marginTop: 10,
@@ -65,6 +81,7 @@ const EditProfile = () => {
             style={{
               height: 56,
               fontSize: 18,
+              color: '#3C3C3E',
               borderBottomColor: '#E5E5E5',
               borderBottomWidth: 1,
               marginTop: 10,
