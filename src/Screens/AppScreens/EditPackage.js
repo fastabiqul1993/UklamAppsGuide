@@ -38,7 +38,7 @@ const EditPackage = () => {
             color: '#171719',
             marginTop: 18,
           }}>
-          New Package
+          Update Package
         </Text>
         {/* Text input... */}
         <View style={{marginTop: 23}}>
@@ -117,15 +117,6 @@ const EditPackage = () => {
           }}
           block>
           <Text style={{color: '#FFF', fontSize: 18}}>Edit package</Text>
-        </Button>
-        <Button
-          style={{
-            backgroundColor: '#FB724A',
-            marginBottom: 20,
-            marginTop: 'auto',
-          }}
-          block>
-          <Text style={{color: '#FFF', fontSize: 18}}>Delete package</Text>
         </Button>
       </View>
     </Fragment>

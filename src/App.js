@@ -13,12 +13,13 @@ import React, {Fragment} from 'react';
 // import PackageList from './Screens/AppScreens/PackageList';
 // import AddPackage from './Screens/AppScreens/AddPackage';
 // import EditPackage from './Screens/AppScreens/EditPackage';
-import DetailPackage from './Screens/AppScreens/DetailPackage';
+// import DetailPackage from './Screens/AppScreens/DetailPackage';
+import Home from './Screens/AppScreens/Home';
 
 const App = () => {
   return (
     <Fragment>
-      <DetailPackage />
+      <Home />
     </Fragment>
   );
 };
