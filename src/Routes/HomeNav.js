@@ -17,8 +17,8 @@ const TabScreen = createMaterialTopTabNavigator(
   },
   {
     tabBarPosition: 'top',
-    // swipeEnabled: true,
-    // animationEnabled: true,
+    swipeEnabled: true,
+    animationEnabled: true,
     tabBarOptions: {
       activeTintColor: '#FB724A',
       inactiveTintColor: '#8C8D99',

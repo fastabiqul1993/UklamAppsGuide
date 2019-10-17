@@ -7,21 +7,23 @@
  */
 
 import React, {Fragment} from 'react';
-// import EditProfile from './Screens/AppScreens/EditProfile';
-// import Profile from './Screens/AppScreens/Profile';
-// import TOS from './Screens/AppScreens/TOS';
-// import PackageList from './Screens/AppScreens/PackageList';
-// import AddPackage from './Screens/AppScreens/AddPackage';
-// import EditPackage from './Screens/AppScreens/EditPackage';
-// import DetailPackage from './Screens/AppScreens/DetailPackage';
-import Home from './Screens/AppScreens/Home';
+import {Provider} from 'react-redux';
+import {Root} from 'native-base';
+import store from './Public/store';
+import AppContainer from './Routes/AppContainer';
 
 const App = () => {
   return (
     <Fragment>
-      <Home />
+      <Provider store={store}>
+        <Root>
+          <AppContainer />
+        </Root>
+      </Provider>
     </Fragment>
   );
 };
+
+console.disableYellowBox = true;
 
 export default App;

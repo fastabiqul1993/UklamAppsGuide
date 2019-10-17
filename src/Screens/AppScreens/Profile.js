@@ -186,8 +186,6 @@ const Profile = () => {
           </TouchableOpacity>
         </View>
       </View>
-      {/* Footer... */}
-      <FooterNav />
     </Fragment>
   );
 };

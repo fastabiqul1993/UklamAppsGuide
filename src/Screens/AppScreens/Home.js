@@ -1,24 +1,26 @@
-import React, {Fragment, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Image,
-  Alert,
-  Switch,
-} from 'react-native';
-import {Thumbnail, Icon, Button} from 'native-base';
-import FooterNav from '../../Components/FooterNav';
+import React, {Fragment, useState, useEffect} from 'react';
+import {View, Text, StyleSheet, Alert, Switch} from 'react-native';
+import {Thumbnail, Icon} from 'native-base';
+import {connect} from 'react-redux';
 import HomeNav from '../../Routes/HomeNav';
+import {getAllPackage} from '../../Public/Action/Package';
+
 //Color pallete
 // Title Text: '#171719'
 // Second Text: '#3C3C3E'
 // Primary Color : '#FB724A'
 // Line Color : '#E5E5E5'
 
-const Home = () => {
+const Home = props => {
   const [status, setStatus] = useState(false);
+
+  const fetchPackage = async () => {
+    await props.dispatch(getAllPackage('guide1@mail.com'));
+  };
+
+  useEffect(() => {
+    fetchPackage();
+  }, []);
 
   const showAlertRedeem = () => {
     Alert.alert(
@@ -38,7 +40,13 @@ const Home = () => {
 
   return (
     <Fragment>
-      <View style={{flex: 1, paddingHorizontal: 20, paddingTop: 34}}>
+      <View
+        style={{
+          flex: 1,
+          paddingHorizontal: 20,
+          paddingTop: 34,
+          backgroundColor: '#FAFAFA',
+        }}>
         {/* Hero... */}
         <View style={{height: 37}}>
           <Text style={{fontSize: 28, fontWeight: 'bold', color: '#171719'}}>
@@ -96,8 +104,6 @@ const Home = () => {
         </View>
         <HomeNav />
       </View>
-      {/* Footer... */}
-      <FooterNav />
     </Fragment>
   );
 };
@@ -109,4 +115,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    isLoading: state.packageCmd.isLoading,
+  };
+};
+
+export default connect(mapStateToProps)(Home);

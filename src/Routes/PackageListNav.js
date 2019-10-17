@@ -1,7 +1,7 @@
-import {createAppContainer} from 'react-navigation';
 import {createMaterialTopTabNavigator} from 'react-navigation-tabs';
-import {createStackNavigator} from 'react-navigation-stack';
-import FirstPage from '../Screens/AppScreens/PackageList/PageOne';
+import Nature from '../Screens/AppScreens/PackageList/Nature';
+import Artificial from '../Screens/AppScreens/PackageList/Artificial';
+import Horror from '../Screens/AppScreens/PackageList/Horror';
 
 //Color pallete
 // Title Text: '#171719'
@@ -10,16 +10,16 @@ import FirstPage from '../Screens/AppScreens/PackageList/PageOne';
 // Primary Color : '#FB724A'
 // Line Color : '#E5E5E5'
 
-const TabScreen = createMaterialTopTabNavigator(
+export const TabScreen = createMaterialTopTabNavigator(
   {
-    Nature: {screen: FirstPage},
-    Artificial: {screen: FirstPage},
-    Horror: {screen: FirstPage},
+    Nature: {screen: Nature},
+    Artificial: {screen: Artificial},
+    Horror: {screen: Horror},
   },
   {
     tabBarPosition: 'top',
-    // swipeEnabled: true,
-    // animationEnabled: true,
+    swipeEnabled: true,
+    animationEnabled: true,
     tabBarOptions: {
       activeTintColor: '#FB724A',
       inactiveTintColor: '#8C8D99',
@@ -36,14 +36,3 @@ const TabScreen = createMaterialTopTabNavigator(
     },
   },
 );
-
-//making a StackNavigator to export as default
-const PackageListNav = createStackNavigator({
-  TabScreen: {
-    screen: TabScreen,
-    navigationOptions: {
-      header: null,
-    },
-  },
-});
-export default createAppContainer(PackageListNav);

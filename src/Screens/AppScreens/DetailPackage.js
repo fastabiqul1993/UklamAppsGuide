@@ -1,6 +1,8 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment} from 'react';
 import {View, Text, Image, TouchableOpacity, Alert} from 'react-native';
 import {Icon} from 'native-base';
+import {connect} from 'react-redux';
+import {deletePackage} from '../../Public/Action/Package';
 
 //Color pallete
 // Title Text: '#171719'
@@ -9,8 +11,8 @@ import {Icon} from 'native-base';
 // Primary Color : '#FB724A'
 // Line Color : '#E5E5E5'
 
-function DetailPackage() {
-  const showAlertRedeem = () => {
+const DetailPackage = props => {
+  const showAlertRedeem = id => {
     Alert.alert(
       'Package',
       'Are you sure delete this package?',
@@ -20,11 +22,25 @@ function DetailPackage() {
           onPress: () => console.log('Cancel Pressed'),
           style: 'cancel',
         },
-        {text: 'OK', onPress: () => console.log('OK Pressed')},
+        {
+          text: 'OK',
+          onPress: () =>
+            props
+              .dispatch(deletePackage(id))
+              .then(() => {
+                console.log('Delete package success!');
+                props.navigation.navigate('PackageList');
+              })
+              .catch(() => {
+                console.log('Delete package fauked!');
+              }),
+        },
       ],
       {cancelable: false},
     );
   };
+
+  const item = props.navigation.state.params.item;
 
   return (
     <Fragment>
@@ -32,8 +48,7 @@ function DetailPackage() {
         <Image
           style={{width: '100%', height: '100%', position: 'relative'}}
           source={{
-            uri:
-              'https://i.pinimg.com/originals/66/a0/ed/66a0ed192932132e38ffdaee2147e2df.jpg',
+            uri: item.photo,
           }}
         />
         <View
@@ -41,7 +56,10 @@ function DetailPackage() {
             position: 'absolute',
             margin: 20,
           }}>
-          <Icon style={{color: '#FFF'}} type="Ionicons" name="arrow-back" />
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate('PackageList')}>
+            <Icon style={{color: '#FFF'}} type="Ionicons" name="arrow-back" />
+          </TouchableOpacity>
         </View>
       </View>
       {/* Title */}
@@ -61,14 +79,14 @@ function DetailPackage() {
             color: '#FFF',
             fontSize: 20,
           }}>
-          Gunung Es
+          {item.name}
         </Text>
         <Text
           style={{
             color: '#FFF',
             fontSize: 20,
           }}>
-          Rp. 500,000,-
+          Rp. {item.price.toLocaleString('en-GB')}
         </Text>
       </View>
       {/* Option... */}
@@ -84,7 +102,7 @@ function DetailPackage() {
             borderBottomWidth: 1,
           }}>
           <Text style={{fontSize: 18, color: '#171719'}}>Type</Text>
-          <Text style={{fontSize: 18, color: '#8C8D99'}}>Nature</Text>
+          <Text style={{fontSize: 18, color: '#8C8D99'}}>{item.type}</Text>
         </View>
         <View
           style={{
@@ -97,12 +115,11 @@ function DetailPackage() {
           }}>
           <Text style={{fontSize: 18, color: '#171719'}}>Description</Text>
           <Text style={{fontSize: 18, color: '#8C8D99', textAlign: 'justify'}}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+            {item.description}
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => props.navigation.navigate('EditPackage', {item})}>
           <View
             style={{
               height: 52,
@@ -121,7 +138,7 @@ function DetailPackage() {
             />
           </View>
         </TouchableOpacity>
-        <TouchableOpacity onPress={() => showAlertRedeem()}>
+        <TouchableOpacity onPress={() => showAlertRedeem(item.id)}>
           <View
             style={{
               height: 52,
@@ -146,6 +163,6 @@ function DetailPackage() {
       </View>
     </Fragment>
   );
-}
+};
 
-export default DetailPackage;
+export default connect(null)(DetailPackage);

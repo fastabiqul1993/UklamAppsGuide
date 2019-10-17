@@ -8,7 +8,7 @@ import {View, Image, Text} from 'react-native';
 // Primary Color : '#FB724A'
 // Line Color : '#E5E5E5'
 
-const Card = () => {
+const Card = props => {
   return (
     <Fragment>
       {/* Card... */}
@@ -19,6 +19,7 @@ const Card = () => {
           borderBottomColor: '#E5E5E5',
           borderBottomWidth: 1,
           height: 117,
+          marginHorizontal: 10,
         }}>
         <View
           style={{
@@ -33,8 +34,7 @@ const Card = () => {
               borderRadius: 10,
             }}
             source={{
-              uri:
-                'https://images.vailresorts.com/image/upload/ar_4:3,c_fill,dpr_3.0,f_auto,g_auto,q_auto/v1/Crested%20Butte/Heros/Brochure/The%20Mountain/Mountain%20Conditions/Weather%20Report/weather%20report%20hero.jpg',
+              uri: props.item.photo,
             }}
           />
 
@@ -45,7 +45,7 @@ const Card = () => {
                 marginVertical: 5,
               }}>
               <Text style={{fontSize: 18, color: '#171719'}}>
-                Gunung kembar
+                {props.item.name}
               </Text>
               <Text
                 style={{
@@ -53,7 +53,7 @@ const Card = () => {
                   color: '#3C3C3E',
                   marginTop: 10,
                 }}>
-                Rp. 50.000,-
+                Rp. {props.item.price.toLocaleString('en-GB')}
               </Text>
             </View>
           </View>
